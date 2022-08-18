@@ -4,6 +4,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
 
 /*
@@ -39,11 +41,13 @@ body {
   border-radius: 1.5rem;
   background: #82B5A4;
   width: 250px;
-  height: 300px;
+  height: 350px;
   padding: .5rem;
 }
 
 .content-abilities {
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 100%;
   border-radius: 1rem;
@@ -52,6 +56,110 @@ body {
     inset 0 10px 0 #3A7364,
     inset 0 10px 5px #3A7364
   ;
+  padding: 1rem;
+}
+
+.content-abilities ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  width: 100%;
+  margin-top: .5rem;
+}
+
+
+.container-name-power {
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+}
+
+.name-power {
+  color: #fff;
+}
+
+.container-name-power span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  background: #356654;
+  box-shadow:
+    inset 0 5px 5px 0 #2A5249,
+    inset 0 5px 5px 0 #2A5249,
+    inset 0 2px 2px 0px #2A5249
+  ;
+  padding: .2rem;
+}
+
+.container-name-power span img {
+  width: 20px;
+}
+
+.container-name-power p {
+  text-shadow: 2px 2px 2px #2A5249;
+}
+
+.container-name-power.skills {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container-name-power.skills span {
+  width: 35px;
+  height: 35px;
+  margin-top: .5rem;
+}
+
+.container-name-power.skills img {
+  width: 27px;
+}
+
+.content-abilities .container-progress {
+  display: flex;
+  column-gap: .5rem;
+  align-items: center;
+}
+
+.content-abilities .container-progress .plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: solid 1px #1B5F39;
+  border-radius: 50%;
+  background: linear-gradient(#93CD5E 20%, #356654);
+  box-shadow: 0px 4px 2px 0px #1B5F39;
+}
+
+.container-progress .content-progress {
+  flex: 1;
+  width: 100%;
+  height: 15px;
+  border-radius: 10px;
+  background: #356654;
+  box-shadow:
+  inset 2px 2px 2px #174b2e,
+  inset 2px 5px 2px #1B5F39
+  ;
+  padding: .1rem;
+  overflow: hidden;
+}
+
+.container-progress .content-progress .progress-bar {
+  display: block;
+  width: 40%;
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(#FED651 , #e2ab2a 60%);
+}
+
+.content-abilities .container-progress .plus i {
+  color: #1B5F39;
 }
 
 .container-pokemon {
@@ -152,6 +260,10 @@ body {
   background: none;
   background: none;
   cursor: pointer;
+}
+
+.disabled  {
+  fill: #e2ab2a;
 }
 
 @media (max-width: 40rem) {
