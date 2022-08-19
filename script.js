@@ -37,12 +37,14 @@ const renderPokemon = async () => {
   h1.innerHTML = "carregando...";
 
   const data = await getPokemon();
+  console.log(data)
   const img =
     data.sprites.versions["generation-v"]["black-white"].animated.front_default;
   if (data) {
     foto.src = img;
     h1.innerHTML = data.name;
     order.innerHTML = data.order;
+    // btnSelect.innerHTML = data.types.map( type => type.name);
   } else {
     foto.src =
       data.sprites.versions["generation-v"][
@@ -51,16 +53,16 @@ const renderPokemon = async () => {
   }
 };
 
-const handleOpenModal = () => {
-  const close = document.querySelector(".close");
-  const modal = document.querySelector("#container-modal");
-  close.addEventListener('click', () => {
-    modal.classList.remove('open')
-  })
-  modal.classList.add('open');
+// const handleOpenModal = () => {
+//   const close = document.querySelector(".close");
+//   const modal = document.querySelector("#container-modal");
+//   close.addEventListener('click', () => {
+//     modal.classList.remove('open')
+//   })
+//   modal.classList.add('open');
 
 
-};
-btnSelect.addEventListener("click", handleOpenModal);
+// };
+// btnSelect.addEventListener("click", handleOpenModal);
 
 renderPokemon(nextPokemon);

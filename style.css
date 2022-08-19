@@ -266,7 +266,7 @@ body {
   fill: #A35916;
 }
 
-.container-modal {
+/* .container-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -304,7 +304,7 @@ body {
   to {
     transform: translateY(0);
   }
-}
+} */
 
 @media (max-width: 40rem) {
   .main {
