@@ -6,6 +6,13 @@ const order = document.querySelector(".order");
 const btnSelect = document.querySelector(".btn");
 const btnPrev = document.querySelector(".prev");
 const btnNext = document.querySelector(".next");
+const namePowers = document.querySelectorAll(".name-power");
+const progressBar = document.querySelectorAll(".progress-bar");
+
+const arrayProgressBar = Array.from(progressBar);
+const progress = arrayProgressBar.map((item) => item);
+const arraynamePowers = Array.from(namePowers);
+const nomePoderes = arraynamePowers.map((item) => item);
 
 let nextPokemon = 1;
 
@@ -37,14 +44,23 @@ const renderPokemon = async () => {
   h1.innerHTML = "carregando...";
 
   const data = await getPokemon();
-  console.log(data)
+
+  const slotFilter = data.types.map((item) => item);
+  const powerFilter = data.stats.filter((power, idx) => idx > 0 && idx <= 3);
+  const namePower = powerFilter.map((item) => item);
+
   const img =
     data.sprites.versions["generation-v"]["black-white"].animated.front_default;
+
   if (data) {
     foto.src = img;
     h1.innerHTML = data.name;
     order.innerHTML = data.order;
-    // btnSelect.innerHTML = data.types.map( type => type.name);
+    btnSelect.innerHTML = slotFilter[0].type.name;
+
+    progress[0].style.width = powerFilter[0].base_stat > 100 ? "100%" : `${powerFilter[0].base_stat}%`;
+    progress[1].style.width = powerFilter[1].base_stat > 100 ? "100%" : `${powerFilter[1].base_stat}%`;
+    progress[2].style.width = powerFilter[2].base_stat > 100 ? "100%" : `${powerFilter[2].base_stat}%`;
   } else {
     foto.src =
       data.sprites.versions["generation-v"][
@@ -60,7 +76,6 @@ const renderPokemon = async () => {
 //     modal.classList.remove('open')
 //   })
 //   modal.classList.add('open');
-
 
 // };
 // btnSelect.addEventListener("click", handleOpenModal);

@@ -147,12 +147,12 @@ body {
   inset 2px 5px 2px #1B5F39
   ;
   padding: .1rem;
+  padding-left: .15rem;
   overflow: hidden;
 }
 
 .container-progress .content-progress .progress-bar {
   display: block;
-  width: 40%;
   height: 100%;
   border-radius: 8px;
   background: linear-gradient(#FED651 , #e2ab2a 60%);
@@ -265,46 +265,6 @@ body {
 .disabled  {
   fill: #A35916;
 }
-
-/* .container-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  visibility: hidden;
-}
-
-.container-modal.open {
-  visibility: inherit;
-}
-
-.modal {
-  width: 60%;
-  height: 60%;
-  min-width: 320px;
-  background: radial-gradient(#1F373B, #17212A);
-  animation: entrada .5s;
-}
-
-.close {
-  padding: .2rem;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-
-@keyframes entrada {
-  from {
-    transform: translateY(-150px);
-  }
-  to {
-    transform: translateY(0);
-  }
-} */
 
 @media (max-width: 40rem) {
   .main {
